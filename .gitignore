@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#Ignore mac hidden folders
+.DS_Store
+
+# Ignore Potentially Large Datasets
+.csv
+.json
