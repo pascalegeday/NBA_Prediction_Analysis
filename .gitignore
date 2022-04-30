@@ -1,8 +1,10 @@
 # Data folder
 data/
+credentials
 
 # config file
 config.py
+config.ini
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
