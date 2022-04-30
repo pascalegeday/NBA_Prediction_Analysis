@@ -1,8 +1,6 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<script type="text/javascript"
-	    src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
 <title>Nba Stats</title>
 {% endblock %}
 
@@ -16,8 +14,9 @@
 <h5 class="container">made by: the One-Hot-EnTOADers</h5>
 
 <div class="container">
-    <div id="vizContainer"></div>
+    <div id="tableauViz"></div>
 </div>
+
 
 <div class="container">
     <div class="table-responsive" style="height:600px; overflow: scroll">
@@ -25,5 +24,5 @@
     </div>
 </div>
 
-<script type="text/javascript" src="static/js/plot.js"></script>
+<script type="module" src="/static/js/plot_embed_api.js"></script>
 {% endblock %}
