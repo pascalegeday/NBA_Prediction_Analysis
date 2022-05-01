@@ -1,10 +1,11 @@
 # Data folder
 data/
-credentials
 
-# config file
+# config and credentials files
 config.py
 config.ini
+credentials
+new_user_credentials.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
