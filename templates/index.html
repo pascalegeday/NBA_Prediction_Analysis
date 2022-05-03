@@ -1,29 +1,46 @@
 {% extends 'base.html' %}
 
+<!--------------------------------- HEAD -------------------------------------->
 {% block head %}
-<script type="text/javascript"
-	    src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
-<title>Nba Stats</title>
+
 {% endblock %}
 
+
+<!--------------------------------- BODY -------------------------------------->
 {% block body %}
-<!-- Title Block -->
-<div class="container" style="text-align: center">
-    <h1>Welcome! This Our App</h1>
-    <br/>
-    <h3>data happened here</h3>
-</div>
-<h5 class="container">made by: the One-Hot-EnTOADers</h5>
-
-<div class="container">
-    <div id="vizContainer"></div>
-</div>
-
-<div class="container">
-    <div class="table-responsive" style="height:600px; overflow: scroll">
-        {{ table|safe }}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand text-dark" href="/">NBA Champion Predict</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="d-flex align-items-end" id="navbarNav">
+        <ul id="navbar-options" class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/game_evolution">Game Evolution</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/offense">Offense</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/defense">Defense</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/comparison">Comparison</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/prediction">Prediction</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/people">People</a>
+          </li>
+        </ul>
+      </div>
     </div>
-</div>
+  </nav>
 
-<script type="text/javascript" src="static/js/plot.js"></script>
+
+<div class="container-fluid">
+        <h1 class="text-center text-white">NBA Champion Prediction</h3>
+</div>
 {% endblock %}
