@@ -1,0 +1,15 @@
+{% extends 'navbar.html' %}
+
+<!--------------------------------- HEAD -------------------------------------->
+{% block head %}
+
+{% endblock %}
+
+
+<!--------------------------------- BODY -------------------------------------->
+{% block body %}
+{{ super() }}
+
+<script type="text/javascript"
+        src="{{ url_for('static', filename='js/prediction_tableau.js') }}"></script>
+{% endblock %}
