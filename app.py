@@ -1,78 +1,74 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.ext.automap import automap_base
-from database_uri import get_db_uri
 import pandas as pd
 
+from database_uri import get_db_uri
+from queries import retrieve_tables
+
+
+# Create the flask app
 app = Flask(__name__)
+# Get DB URI by specifying DB user type
 app.config["SQLALCHEMY_DATABASE_URI"] = get_db_uri("root")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
+# Create the SQLAlchemy instance
 db = SQLAlchemy(app)
 
-# teams_traditional = db.Table(
-#     "teams_traditional", db.metadata, autoload=True, autoload_with=db.engine
-# )
-
-Base = automap_base()
-Base.prepare(engine=db.engine, autoload_with=db.engine)
-TeamsTraditional = Base.classes.teams_traditional
+# Assign DataFrames using DB table names
+teams_traditional, teams_advanced, teams_misc = retrieve_tables(db)
+tables = {
+    "traditional": teams_traditional,
+    "advanced": teams_advanced,
+    "misc": teams_misc,
+}
 
 
 @app.route("/")
 def index():
-    query = db.session.query(TeamsTraditional)
-    df = pd.read_sql(sql=query.statement, con=db.engine)
-    df["SEASON"] = df["SEASON"].dt.year
-    table_html = df.to_html(
+
+    return render_template("index.html")
+
+
+@app.route("/game_evolution")
+def game_evolution():
+    table_html = tables["traditional"].to_html(
         justify="left",
         border=0,
         classes=["table", "table-dark", "table-striped"],
         index=False,
     )
-    return render_template("index.html", table=table_html)
+    return render_template("game_evolution.html", table_html=table_html)
 
 
-@app.route("/embed")
-def index_embed():
-    query = db.session.query(TeamsTraditional)
-    df = pd.read_sql(sql=query.statement, con=db.engine)
-    df["SEASON"] = df["SEASON"].dt.year
-    table_html = df.to_html(
-        justify="left",
-        border=0,
-        classes=["table", "table-dark", "table-striped"],
-        index=False,
-    )
-    return render_template("index_embed.html", table=table_html)
+@app.route("/offense")
+def offense():
+
+    return render_template("offense.html")
 
 
-@app.route("/embed_api")
-def index_embed_api():
-    query = db.session.query(TeamsTraditional)
-    df = pd.read_sql(sql=query.statement, con=db.engine)
-    df["SEASON"] = df["SEASON"].dt.year
-    table_html = df.to_html(
-        justify="left",
-        border=0,
-        classes=["table", "table-dark", "table-striped"],
-        index=False,
-    )
-    return render_template("index_embed_api.html", table=table_html)
+@app.route("/defense")
+def defense():
+
+    return render_template("defense.html")
 
 
-@app.route("/web_comp")
-def index_web_comp():
-    query = db.session.query(TeamsTraditional)
-    df = pd.read_sql(sql=query.statement, con=db.engine)
-    df["SEASON"] = df["SEASON"].dt.year
-    table_html = df.to_html(
-        justify="left",
-        border=0,
-        classes=["table", "table-dark", "table-striped"],
-        index=False,
-    )
-    return render_template("index_web_comp.html", table=table_html)
+@app.route("/comparison")
+def comparison():
+
+    return render_template("comparison.html")
+
+
+@app.route("/prediction")
+def prediction():
+
+    return render_template("prediction.html")
+
+
+@app.route("/people")
+def people():
+
+    return render_template("people.html")
 
 
 if __name__ == "__main__":
