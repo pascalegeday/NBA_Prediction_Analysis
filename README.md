@@ -1,56 +1,78 @@
-# NBA CHAMPION ANALYSIS PROJECT - WHO WILL BE OUR 2022 CHAMPION? 
+# NBA CHAMPION ANALYSIS PROJECT
+## WHO WILL BE OUR 2022 CHAMPION? 
 
 ## Overview
-For this project we will use a supervised machine learning to analyze our NBA Stats Database that we have created via Web Scraping to to predict the 2022 NBA Champion and the ways in which the model's feature importance affect the overall outcome of our predictions. The data will be processed to fit the machine learning models and further analyzed to draw conclusions about historical trends compared to our currents season. Finally, we'll create a Flask app to deploy these visualizations and analysis. 
+"The National Basketball Association (NBA) is a professional basketball league in North America. The league is composed of 30 teams (29 in the United States and 1 in Canada) and is one of the major professional sports leagues in the United States and Canada. It is the premier men's professional basketball league in the world.” <br> <br>
+Aware of the huge impact this sport has worldwide and the data available to us, our final project will focus on learning how historical team statistics/data can help us predict the 2022 NBA champion using machine learning models. Additionally, we will analyze important team statistics to help us come to a consensus about why our machine learning predicted certain teams as being the most probable choice for NBA Champion.
+We will use a supervised machine learning model, Logistic Regression, to predict the 2022 NBA Champion. Using our NBA Stats Database that we have created via Web Scraping and ETL preprocessing we will analyze the machine learning model's feature importance as well as create Tableau visualizations to further understand the overall outcome of our predictions. Finally, we'll create a Flask app to deploy these visualizations and analysis. 
+
+## Overarching Analysis Questions
+* Can we create a machine learning model to predict this year's NBA Champion?
+* Which team statistics give the most insight into what a champion team looks like?
+* What features does the machine learning model weight most heavily, and can these provide insight into our analysis?
 
 ## Resources
-- Data Source: crypto_data.csv, CryptoCompare
-- Software & Tools: Python, Jupyter Lab, SKlearn, Pandas, Plotly
+- Data Source: Official Team Stats for NBA: https://www.nba.com/stats/teams/traditional/?sort=W_PCT&dir=-1
+- Software & Tools: Python, Flask, SKlearn, Tableau Public, Javascript, HTML, Bootstrap, CSS
 
-## Results
-Once the data is processed to fit the machine learning models, we are left with a total of 532 tradable cryptocurrencies.
-<br><br>
-<p align="center">
-<img width="294" alt="Screen Shot 2022-03-28 at 10 54 18 PM" src="https://user-images.githubusercontent.com/94571150/160542834-b01d21ca-1a2d-45c1-a073-3696bb0177e3.png">
-</p>
+## Schema
+[insert visual]
 
-### Clustering Cryptocurrencies using K-Means - Elbow Curve
+## ERD
+[insert visual]
 
-<p align="center">
-<img width="924" alt="Screen Shot 2022-03-28 at 10 51 50 PM" src="https://user-images.githubusercontent.com/94571150/160542646-3576f674-5133-4a10-93ad-3e587cb43971.png">
+## Exploratory Data Analysis & Visualizations
+#### Tableau Visualizations
+The Evolution of the NBA: How teams have evolved from playing a paint-dominant game to players now expected to stretch the floor.
+* 3-point data using attempted, made, and percentage of 3-points made
+* Offensive Stats: EFG%, Free Throws Percentage, Points off turnovers, Offensive Rebounds
+* Defensive Stats: Blocks, Steals, Defensive Rebounds, Defensive Rating
+* Comparing Past Champions to Current Season: Offensive vs. Defensive Rating, Assists vs Turnovers, Effective vs True Shooting Percentages
+* Our Machine Learning Model Stats on Predicted Champion via Logistic Regression Model, Feature Importance Visual and Analysis
+#### Flask App
+* We have structured a Flask app that will hold our final dashboard. HTML templates were created with a base file that has bootstrap and our own additional css file loaded as well as the structure for any other html file to inherit from this base file.
+* We have included our Tableau visuals in our flask app by writing code to embed visuals directly from Tableau and produce a cohesive app
+#### Machine Learning Model: Logistic Regression
+* We used a Logistic Regression Model to best fit for our goal of predicting a champion. Producing an outcome of a possible champions: Memphis Grizzlies
+* We have also used this model to analyze feature importance in order to see which statistics our champion prediction are most heavily dependent on.
 
-</p>
-As shown on the elbow curve above that was produced using the initial K-Means algorithm by iterating through k values in a range of 1 to 10, the best value for K is 4. We will use 4 clusters to run K-Means. 
+## Game Evolution 
+The Evolution of the NBA game has come a long way since 1997 (where our data dates back). We have seen a slow and steady change in how the style of the game is played.
 
+#### 3 Point Shots
+The first two visuals show an evolution of how teams have evolved from playing a paint-dominant game to players now expected to stretch the floor.
+Using 3-Point shot statistics such as Attempted, Made, and Percentage we can see the shift and increase in 3-Point shots made in more recent years.
+From roughly the 2016 & 2017 season, the style of 3-point shots used shifted dramatically. We can assume that using seasons from 2016 to present in our analysis may show a more accurate presentation of how teams are playing.
+#### Defensive Stats
+The Defensive Stats visual shows historical trends for average Blocks, Steals, Defensive Rebounds, and Defensive Rating.
+Blocks: Shows a slight decrease in recent years in the average blocks by teams
+Steals: Shows a slight increase in recent years in the average steals by teams
+Defensive Rebounds: Shows a gradual increase in recent years in the average defensive rebounds by teams
+Defensive Rating: Shows a slight increase in recent years in the average defensive rating by teams
+#### Offensive Stats
+The Offensive Stats visual shows historical trends for average Effective Field Goal%, Free Throw Percentage, Points Off Turnovers, and Offensive Rebounds.
+Effective Field Goal%: Shows a gradual increase in recent years in the average Effective Field Goal% by teams
+Free Throw Percentage: Shows an apparent increase in recent years in the average Free Throw Percentage by teams
+Points Off Turnovers: Shows an even distribution without much change in recent years in the average Points Off Turnovers by teams
+Offensive Rebounds: Shows an apparent decrease in recent years in the average Offensive Rebounds by teams
 
-### Visualizing Cryptocurrencies Results
-#### 3D Scatter with Clusters
-<p align="center">
-<img src="https://user-images.githubusercontent.com/94571150/160543582-bc601624-0f66-407c-8770-1815ee4379fc.png">
+## Comparisons
+Past Champions vs. Current Playoff Teams compares the regular season stats of historical NBA champions and how they compare to the regular season stats of the teams currently playing in the 2022 Playoffs.
 
-</p>
-The 3D scatter plot above uses the PCA algorithm to reduce the cryptocurrency dimensions to three principal components.
+#### Offensive vs. Defensive Rating
+Past champions have historically grouped between the 1st and 3rd quadrants.
+This past season shows a rough distribution between quadrants.
+Will be interesting to see if the champion team will remain between these two quadrants.
+#### Assist% vs. Turnover%
+Past champions have historically grouped between the 1st and 3rd quadrants.
+This past season shows a somwhat similar distribution between the 1st and 3rd quadrants.
+Will be interesting to see if the champion team will remain between these two quadrants.
+#### Effective Field Goal% vs. True Shooting%
+Past champions have historically grouped between the 1st and 3rd quadrants in a linear fashion with more recent teams in the first quadrant.
+This past season shows a similar linear trend.
+The champion team may be found in the first quadrant.
 
+## Defensive and Offensive Stats
 
-#### Tradable Cryptocurrencies Table
-<p align="center">
+## Final Predictions
 
-<img src="https://user-images.githubusercontent.com/94571150/160544708-f0c37611-ff37-4a07-b56c-5639959f98ae.png">
-</p>
-
-Above shows a snapshot of the tradable cryptocurrencies table.<br>
-
-
-#### 2D-Scatter plot with clusters
-<p align="center">
-    <img src="https://user-images.githubusercontent.com/94571150/160545496-5fa2ea61-c004-4f37-b9e4-c984ec24d04f.png"> 
-</p>
-
-The 2D scatter plot above uses the PCA algorithm to reduce the cryptocurrency dimensions to two principal components.
-
-
-## Summary
-We have identified 532 tradable cryptocurrencies based on feature similarities.<br><br>
-The scatter plots reveal the four clusters of cryptocurrencies.
-<br><br>
-Use case example: An investment bank is interested in offering a new cryptocurrency investment portfolio for its customers. The above report showng available cryptocurrencies on the trading market shows the ways in which they can be grouped to create a classification system for this potential investment. 
