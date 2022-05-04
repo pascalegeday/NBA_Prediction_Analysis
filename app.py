@@ -41,16 +41,10 @@ def game_evolution():
     return render_template("game_evolution.html", table_html=table_html)
 
 
-@app.route("/offense")
+@app.route("/defense_offense")
 def offense():
 
-    return render_template("offense.html")
-
-
-@app.route("/defense")
-def defense():
-
-    return render_template("defense.html")
+    return render_template("defense_offense.html")
 
 
 @app.route("/comparison")

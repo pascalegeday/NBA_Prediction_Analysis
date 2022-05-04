@@ -2,6 +2,8 @@
 
 <!--------------------------------- HEAD -------------------------------------->
 {% block head %}
+<title>GAME EVOLUTION </title>
+<script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
 
 {% endblock %}
 
@@ -9,13 +11,20 @@
 <!--------------------------------- BODY -------------------------------------->
 {% block body %}
 {{ super() }}
+<tableau-viz id="tableauViz"       
+src= "https://public.tableau.com/views/GAMEEVOLUTION/GAMEEVOLUTION?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link"     
+device="desktop" toolbar="bottom" hide-tabs>
+</tableau-viz>
 
-<div class="container">
+ <!-- <div class="container">
 	<div class="table-responsive" style="height:900px; overflow: scroll">
 			{{ table_html|safe }}
 	</div>
-</div>
+</div> -->
 
 <script type="text/javascript"
         src="{{ url_for('static', filename='js/game_evolution_tableau.js') }}"></script>
+
+		
+
 {% endblock %}
