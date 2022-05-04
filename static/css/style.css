@@ -1,0 +1,19 @@
+/* .p-5-text-center-bg-image {
+
+    background-repeat: repeat;
+
+ } */
+ 
+ .header-img {
+    width: 100%;
+    height: 250px;
+    background: url('https://ftw.usatoday.com/wp-content/uploads/sites/90/2016/10/usatsi_9349706-copy.jpg?w=1000&h=600&crop=1');
+    background-size: cover;
+    background-position: 100% 20%;
+    opacity:0.9
+  }
+
+  .tableauViz {
+
+  }
+  

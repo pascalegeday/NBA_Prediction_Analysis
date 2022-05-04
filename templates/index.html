@@ -2,7 +2,7 @@
 
 <!--------------------------------- HEAD -------------------------------------->
 {% block head %}
-
+<link rel="stylesheet" href="style.css">
 {% endblock %}
 
 
@@ -10,34 +10,158 @@
 {% block body %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand text-dark" href="/">NBA Champion Predict</a>
+      <a class="navbar-brand text-dark" href="/"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="d-flex align-items-end" id="navbarNav">
         <ul id="navbar-options" class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/game_evolution">Game Evolution</a>
+            <a class="nav-link" aria-current="page" href="/game_evolution" style="font-family: Aileron">Game Evolution</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/defense_offense">Defensive & Offensive Stats</a>
+            <a class="nav-link" href="/defense_offense" style="font-family: Aileron">Defensive & Offensive Stats</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/comparison">Comparison</a>
+            <a class="nav-link" href="/comparison" style="font-family: Aileron">Comparison</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/prediction">Prediction</a>
+            <a class="nav-link" href="/prediction" style="font-family: Aileron">Prediction</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/people">People</a>
+            <a class="nav-link" href="/people" style="font-family: Aileron">People</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-
+  <!-- Background image -->
+  <div
+    class="p-5 text-center bg-image"
+    style="
+      background-image: url('https://lh3.googleusercontent.com/_V5R92uH2r1eubIqPIKUGpcitGxqNaUnHQ73RfwnSXPv8QhYEJp1TKc8XJCsmQpEaT5GhbW-yc3hPEs4BcVjGl8V-yhqwRqQBK4d3jZ3MZH1QXWXgd7Wbc-LhDWrC3Dfxg4t7xeQQ5Y=w2400');
+      height: 300px;
+      background-color: #499195;
+      background-size: cover;
+      background-position: 100% 10%;
+      opacity:0.9"
+  >
+    <div class="mask" style="background-color: rgba(2, 3, 16, 0.438);">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3" style="font-family: Aileron">NBA CHAMPION ANALYSIS</h1>
+          <h4 class="mb-3" style="font-family: Aileron">Who will be our 2022 Champion?</h4>
+          <a class="btn btn-outline-light btn-lg" style="font-family: Aileron" href="/prediction" role="button"
+          >Prediction</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
 
 <div class="container-fluid">
-        <h1 class="text-center text-white">NBA Champion Prediction</h3>
+   <h3 class="text-center text-white" style="font-family: Aileron">Overview</h3>
 </div>
+  <div class="container-fluid">
+    <p class="text-white" style="font-family: Aileron"> 
+      &nbsp; &nbsp;&nbsp; &nbsp;“The National Basketball Association (NBA) is a professional basketball league in North America. The league is composed of 30 teams (29 in the United States and 1 in Canada) and is one of the major professional sports leagues in the United States and Canada. It is the premier men's professional basketball league in the world.” <br> <br>
+      &nbsp; &nbsp;&nbsp; &nbsp;Aware of the huge impact this sport has worldwide and the data available to us, our final project will focus on learning how historical team statistics/data can help us predict the 2022 NBA champion using machine learning models. Additionally, we will analyze important team statistics to help us come to a consensus about why our machine learning predicted certain teams as being the most probable choice for NBA Champion.
+    </p>
+  </div>
+
+<div class="container-fluid">
+  <h3 class="text-center text-white" style="font-family: Aileron">Overarching Analysis Questions</h3>
+</div>
+  <div class="container-fluid">
+    <ol class="text-white" style="font-family: Aileron" type="I"> 
+      <li>Can we create a machine learning model to predict this year's NBA Champion? </li> 
+      <li>Which team statistics give the most insight into what a champion team looks like? </li>
+      <li>What features does the machine learning model weight most heavily, and can these provide insight into our analysis? </li>
+
+    </ol>
+  </div>
+
+  <div class="container-fluid">
+    <h3 class="text-center text-white" style="font-family: Aileron">Resources</h3>
+  </div>
+    <div class="container-fluid">
+      <p class="text-center text-white" style="font-family: Aileron"> 
+        <a href="https://www.nba.com/stats/teams/traditional/?sort=W_PCT&dir=-1" target="_blank">Official Team Stats for NBA</a>
+  
+      </p>
+    </div>
+
+    <div class="container-fluid">
+      <h3 class="text-center text-white" style="font-family: Aileron">Schema/Visual </h3>
+    </div>
+      <div class="container-fluid">
+        <p style="text-align:center; font-family: Aileron"> 
+          <img src="https://lh3.googleusercontent.com/NvAai5xNvwSE7NnQ3Fwn_nWHMiqOOGlZCJrL4QnuMFkpYJt7aIgExEse1gPjwVPI_yIREOrCpd2M14vg0K40WuIsGng-Yi8UQfLrIcAA9UNlg5cDfTz_Dkgjncnb3gx4_7JEzeE1WSA=w2400" class="img-fluid" alt="..."
+          style = "width: 700px;
+          height: 500px;
+          opacity:0.9">
+        </p>
+        <p class="text-center text-white" style="font-family: Aileron"> 
+          Project Design Map
+        </p>
+        <p style="text-align:center; font-family: Aileron"> 
+          <img src="https://lh3.googleusercontent.com/bvYHfMjWeZEvYTME0ytIY_SQNYQbfJR-jPPgeEsxxqlxk6Xqo4VCUvYtkP-NgKLow6B5uUj0M0NXXqpDq2Z83ftE5EmywUHtCMtHs7GWVXDR7KX4vkA2BlYrjZyvMG9LRQSHrizDkUg=w2400" class="img-fluid" alt="..."
+          style = "width: 700px;
+          height: 700px;
+          opacity:0.9">
+        </p>
+        <p class="text-center text-white" style="font-family: Aileron"> 
+          ERD
+        </p>
+      </div>
+
+      <div class="container-fluid">
+        <h3 class="text-center text-white" style="font-family: Aileron">Exploratory Data Analysis & Visualizations</h3>
+      </div>
+        <div class="container-fluid">
+          <ol class="text-white" style="font-family: Aileron" > Tableau Visualizations
+            <li>The Evolution of the NBA: How teams have evolved from playing a paint-dominant game to players now expected to stretch the floor. 
+              3-point data using attempted, made, and percentage of 3-points made</li>
+              <li>Offensive Stats:
+                EFG%,
+                Free Throws Percentage,
+                Points off turnovers,
+                Offensive Rebounds</li>
+              <li>Defensive Stats:
+                Blocks,
+                Steals,
+                Defensive Rebounds,
+                Defensive Rating</li>
+              <li>Comparing Past Champions to Current Season:
+                Offensive vs. Defensive Rating,
+                Assists vs Turnovers,
+                Effective vs True Shooting Percentages </li>
+              <li>Our Machine Learning Model 
+                Stats on Predicted Champion via Logistic Regression Model,
+                Feature Importance Visual and Analysis
+               </li>
+          </ol>
+        </div>
+        <div class="container-fluid">
+          <ol class="text-white" style="font-family: Aileron" > Flask App
+            <li>We have structured a Flask app that will hold our final dashboard. 
+              HTML templates were created with a base file that has bootstrap and our own additional css file loaded as well as the structure for any other html file to inherit from this base file.
+            </li>
+              <li>We have included our Tableau visuals in our flask app by writing code to embed visuals directly from Tableau and produce a cohesive app</li>
+
+          </ol>
+        </div>
+        <div class="container-fluid">
+          <ol class="text-white" style="font-family: Aileron" > Machine Learning Model: Logistic Regression
+            <li> We used a Logistic Regression Model to best fit for our goal of predicting a champion. <br>
+              Producing an outcome of 2 possible champions: Boston Celtics and Phoenix Suns 
+            </li>
+              <li>We have also used this model to analyze feature importance in order to see which statistics our champion prediction are most heavily dependent on.</li>
+
+          </ol>
+        </div>
+
+
+
 {% endblock %}

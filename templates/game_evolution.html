@@ -4,18 +4,53 @@
 {% block head %}
 <title>GAME EVOLUTION </title>
 <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
-
+<link rel="stylesheet" href="style.css">
 {% endblock %}
 
 
 <!--------------------------------- BODY -------------------------------------->
 {% block body %}
 {{ super() }}
-<tableau-viz id="tableauViz"       
-src= "https://public.tableau.com/views/GAMEEVOLUTION/GAMEEVOLUTION?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link"     
-device="desktop" toolbar="bottom" hide-tabs>
-</tableau-viz>
 
+	<tableau-viz id="tableauViz"       
+	src= "https://public.tableau.com/views/GAMEEVOLUTION/GAMEEVOLUTION?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link"     
+	device="desktop" toolbar="bottom"  hide-tabs>
+	</tableau-viz>
+	<main>
+		<div class="container px-4 py-5" id="featured-3"> 
+		  <h2 class="pb-2 border-bottom text-white" style="font-family: Aileron">Analysis</h2>
+		  <p class="pb-2 text-white" style="font-family: Aileron">
+			The Evolution of the NBA game has come a long way since 1997 (where our data dates back). We have seen a slow and steady change in how the style of the game is played. 
+		   </p>
+		   <ul class="text-white" style="font-family: Aileron"  > 3 Point Shots
+				<li> The first two visuals show an evolution of how teams have evolved from playing a paint-dominant game to players now expected to stretch the floor. <br>
+					Using 3-Point shot statistics such as Attempted, Made, and Percentage we can see the shift and increase in 3-Point shots made in more recent years. <br>
+					From roughly the 2016 & 2017 season, the style of 3-point shots used shifted dramatically. We can assume that using seasons from 2016 to present in our analysis may show a more accurate presentation of how teams are playing. 
+				</li>
+			</ul>
+			<ul class="text-white" style="font-family: Aileron"  > Defensive Stats
+				<li> The Defensive Stats visual shows historical trends for average Blocks, Steals, Defensive Rebounds, and Defensive Rating. <br>
+					Blocks: Shows a slight decrease in recent years in the average blocks by teams <br>
+					Steals: Shows a slight increase in recent years in the average steals by teams <br>
+					Defensive Rebounds: Shows a gradual increase in recent years in the average defensive rebounds by teams <br>
+					Defensive Rating: Shows a slight increase in recent years in the average defensive rating by teams
+
+				</li>
+			</ul>
+			<ul class="text-white" style="font-family: Aileron"  > Offensive Stats
+				<li> The Offensive Stats visual shows historical trends for average Effective Field Goal%, Free Throw Percentage, Points Off Turnovers, and Offensive Rebounds. <br>
+					Effective Field Goal%: Shows a gradual increase in recent years in the average Effective Field Goal% by teams <br>
+					Free Throw Percentage: Shows an apparent increase in recent years in the average Free Throw Percentage by teams <br>
+					Points Off Turnovers: Shows an even distribution without much change in recent years in the average Points Off Turnovers by teams <br>
+					Offensive Rebounds: Shows an apparent decrease in recent years in the average Offensive Rebounds by teams
+
+				</li>
+			</ul>
+			
+		
+		</div>
+		
+	</main>
  <!-- <div class="container">
 	<div class="table-responsive" style="height:900px; overflow: scroll">
 			{{ table_html|safe }}
