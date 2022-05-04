@@ -42,7 +42,7 @@ def game_evolution():
 
 
 @app.route("/defense_offense")
-def offense():
+def defense_offense():
 
     return render_template("defense_offense.html")
 
