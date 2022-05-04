@@ -11,6 +11,7 @@ sqlalchemy = "*"
 setuptools = "==59.5.0"
 psycopg2 = "*"
 numpy = "*"
+colorama = "*"
 
 [dev-packages]
 
