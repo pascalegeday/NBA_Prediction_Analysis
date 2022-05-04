@@ -16,10 +16,13 @@ We will use a supervised machine learning model, Logistic Regression, to predict
 - Software & Tools: Python, Flask, SKlearn, Tableau Public, Javascript, HTML, Bootstrap, CSS
 
 ## Schema
-[insert visual]
+![Final_Project_Schema drawio (1)](https://user-images.githubusercontent.com/94571150/166839064-6888bba8-11c4-4334-9551-45733c7b216f.png)
+
 
 ## ERD
-[insert visual]
+
+<img width="611" alt="Screen Shot 2022-05-04 at 12 29 28 PM" src="https://user-images.githubusercontent.com/94571150/166839099-145536a2-29d1-4436-9ac7-3ed5136c7121.png">
+
 
 ## Exploratory Data Analysis & Visualizations
 #### Tableau Visualizations
@@ -40,16 +43,22 @@ The Evolution of the NBA: How teams have evolved from playing a paint-dominant g
 The Evolution of the NBA game has come a long way since 1997 (where our data dates back). We have seen a slow and steady change in how the style of the game is played.
 
 #### 3 Point Shots
+![Screen Shot 2022-05-04 at 4 03 26 PM](https://user-images.githubusercontent.com/94571150/166839188-5df3cd5b-580d-499a-aa92-ceba22322817.png)
+<br>
 The first two visuals show an evolution of how teams have evolved from playing a paint-dominant game to players now expected to stretch the floor.
 Using 3-Point shot statistics such as Attempted, Made, and Percentage we can see the shift and increase in 3-Point shots made in more recent years.
 From roughly the 2016 & 2017 season, the style of 3-point shots used shifted dramatically. We can assume that using seasons from 2016 to present in our analysis may show a more accurate presentation of how teams are playing.
 #### Defensive Stats
+![Screen Shot 2022-05-04 at 4 04 51 PM](https://user-images.githubusercontent.com/94571150/166839329-e836040b-c052-49f0-90c3-fbdb2a7ddd4a.png)
+<br>
 The Defensive Stats visual shows historical trends for average Blocks, Steals, Defensive Rebounds, and Defensive Rating.
 Blocks: Shows a slight decrease in recent years in the average blocks by teams
 Steals: Shows a slight increase in recent years in the average steals by teams
 Defensive Rebounds: Shows a gradual increase in recent years in the average defensive rebounds by teams
 Defensive Rating: Shows a slight increase in recent years in the average defensive rating by teams
 #### Offensive Stats
+![Screen Shot 2022-05-04 at 4 05 29 PM](https://user-images.githubusercontent.com/94571150/166839360-c1607ff3-796c-4adf-8fd6-5dcf5250eb5a.png)
+<br>
 The Offensive Stats visual shows historical trends for average Effective Field Goal%, Free Throw Percentage, Points Off Turnovers, and Offensive Rebounds.
 Effective Field Goal%: Shows a gradual increase in recent years in the average Effective Field Goal% by teams
 Free Throw Percentage: Shows an apparent increase in recent years in the average Free Throw Percentage by teams
@@ -57,17 +66,25 @@ Points Off Turnovers: Shows an even distribution without much change in recent y
 Offensive Rebounds: Shows an apparent decrease in recent years in the average Offensive Rebounds by teams
 
 ## Comparisons
+
 Past Champions vs. Current Playoff Teams compares the regular season stats of historical NBA champions and how they compare to the regular season stats of the teams currently playing in the 2022 Playoffs.
 
 #### Offensive vs. Defensive Rating
+<img width="1218" alt="Screen Shot 2022-05-04 at 4 08 43 PM" src="https://user-images.githubusercontent.com/94571150/166839653-7e357dd8-fead-4477-999d-f7b617929126.png">
+<br>
+
 Past champions have historically grouped between the 1st and 3rd quadrants.
 This past season shows a rough distribution between quadrants.
 Will be interesting to see if the champion team will remain between these two quadrants.
 #### Assist% vs. Turnover%
+<img width="1216" alt="Screen Shot 2022-05-04 at 4 09 26 PM" src="https://user-images.githubusercontent.com/94571150/166839715-05aff539-d6ed-43e7-84ce-4731a6036384.png">
+<br>
 Past champions have historically grouped between the 1st and 3rd quadrants.
 This past season shows a somwhat similar distribution between the 1st and 3rd quadrants.
 Will be interesting to see if the champion team will remain between these two quadrants.
 #### Effective Field Goal% vs. True Shooting%
+<img width="1222" alt="Screen Shot 2022-05-04 at 4 09 59 PM" src="https://user-images.githubusercontent.com/94571150/166839777-63f58671-74e0-4a4a-a1f9-ed325c42771f.png">
+<br>
 Past champions have historically grouped between the 1st and 3rd quadrants in a linear fashion with more recent teams in the first quadrant.
 This past season shows a similar linear trend.
 The champion team may be found in the first quadrant.
