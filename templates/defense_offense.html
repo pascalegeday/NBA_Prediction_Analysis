@@ -2,7 +2,7 @@
 
 <!--------------------------------- HEAD -------------------------------------->
 {% block head %}
-<title>CHAMPIONS VS. CURRENT TEAMS </title>
+<title>Defensive & Offensive Stats</title>
     <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
 {% endblock %}
 
@@ -11,10 +11,10 @@
 {% block body %}
 {{ super() }}
 <tableau-viz id="tableauViz"       
-src= "https://public.tableau.com/views/PASTCHAMPIONSVS_CURRENTPLAYOFFTEAMS/PASTCHAMPIONSVS_CURRENTSEASON?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link"     
+src= "https://public.tableau.com/views/NBATeamStats_16516195895630/TeamStatsStory?:language=en-US&:display_count=n&:origin=viz_share_link"     
 device="desktop" toolbar="bottom" hide-tabs>
 </tableau-viz>
 
 <script type="text/javascript"
-        src="{{ url_for('static', filename='js/comparison_tableau.js') }}"></script>
+        src="{{ url_for('static', filename='js/defense_tableau.js') }}"></script>
 {% endblock %}
