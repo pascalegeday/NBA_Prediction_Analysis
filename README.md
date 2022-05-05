@@ -90,6 +90,33 @@ This past season shows a similar linear trend.
 The champion team may be found in the first quadrant.
 
 ## Defensive and Offensive Stats
+#### Offensive Stats
+![Screen Shot 2022-05-04 at 5 44 18 PM](https://user-images.githubusercontent.com/94571150/166848925-5d22e4cf-b9a8-42eb-8f55-c77566712c1e.png)
+<br>
+This dashboard visualizes the Average Effective Field Goal %, Offensive Rebound %, Turnover %, and Free Throw %. You can view the average for each team and filter the graph season. Currently, we can see the averages of these four metrics for the 2022 season. We chose these metrics for the most relevant offensive statistics because they are most heavily correlated to a successful offense in the NBA. <br>
+Effective FG% adjusts field goal percentage to account for the fact that three-point field goals count for three points while field goals only count for two points. <br>
+Offensive Rebound % is the percentage of available offensive rebounds a player or team obtains while on the floor. <br>
+Turnover % is the percentage of plays that end in a player or team’s turnover. <br>
+Free Throw % is the percentage of free throw attempts that a player or team has made. <br>
+#### Defensive Stats
+![Screen Shot 2022-05-04 at 5 43 48 PM](https://user-images.githubusercontent.com/94571150/166848897-f05a963c-3ab9-4e94-a2ac-7b55741e7733.png)
+<br>
+
+This dashboard visualizes the Average Blocks, Steals, Defensive Rebound %, and Opponents Points Off Turnovers. You can view the average for each team and filter the graph by season. <br>
+Currently, we can see the averages of these four metrics for the 2022 season. We chose these metrics for the most relevant defensive statistics because they are most strongly correlated to a strong defensive team in the NBA. <br>
+Blocks occur when an offensive player attempts a shot, and the defense player tips the ball, blocking their chance to score. <br>
+Steals are the number of times a defensive player or team takes the ball from a player on offense, causing a turnover. <br>
+Defensive Rebound % is the percentage of available defensive rebounds a player or team obtains while on the floor. <br>
+Opponents Points Off Turnovers is the number of points scored by an opposing player or team following a turnover. <br>
+#### Offensive vs. Defensive Rating
+![Screen Shot 2022-05-04 at 5 44 42 PM](https://user-images.githubusercontent.com/94571150/166848956-f236e523-e114-4bd9-b92d-b7d37cbc1007.png)
+<br>
+Offensive rating measures a team's points scored per 100 possessions. <br>
+Defensive rating is the number of points allowed per 100 possessions by a team. <br>
+From the offensive and defensive ratings, we can calculate the net rating, which measures a team's point differential per 100 possessions. These ratings can help us understand the offensive and defensive efficiency of teams compared to each other. However, these ratings do not determine who the predicted champion will be since there are several other statistical factors we accounted for. <br>
 
 ## Final Predictions
+![Screen Shot 2022-05-04 at 5 46 14 PM](https://user-images.githubusercontent.com/94571150/166849061-984b78f0-e618-48b6-b5e5-437d4798cc0d.png)
 
+Memphis Grizzlies
+Our machine learning model predicted that the Memphis Grizzlies will be the 2022 NBA Finals Champions. After we ran our machine learning model, we wanted to see the highest weighted relative importance of each of the stats that were accounted for in predicting the 2022 champion. The top four features were Assist to Turnover Ratio (100), Defensive Rating (86.02), Offensive Rating (50.12), and Blocks (45.9). In the graph above, you can see the seasonal trends over the last few decades for these four features. If we look at the other dashboards in the story, we can see how the Grizzlies compare to other playoff teams in each of the four features.
