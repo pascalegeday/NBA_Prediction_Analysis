@@ -11,6 +11,7 @@
 {% block body %}
 {{ super() }}
 
+
 <main>
         <div class="header-img"></div>
 </main>
@@ -41,7 +42,21 @@
         
                 </p>
                 </div>
-        </div>
+        </div> 
+       
+        <tableau-viz id="tableauViz"       
+        src= "https://public.tableau.com/views/NBATeamStats_16516195895630/pOppPtsOffTO?:language=en-US&:display_count=n&:origin=viz_share_link"     
+        device="desktop" toolbar="bottom" hide-tabs>
+        </tableau-viz>
+
+               <div class="container px-4 py-5" id="featured-3"> 
+                  <h2 class="pb-2 border-bottom text-white" style="font-family: Aileron">Analysis</h2>
+                  <p class="pb-2 text-white" style="font-family: Aileron">
+                   </p>
+                   <ul class="text-white" style="font-family: Aileron"  > Memphis Grizzlies
+                    <li> Our machine learning model predicted that the Memphis Grizzlies will be the 2022 NBA Finals Champions. After we ran our machine learning model, we wanted to see the highest weighted relative importance of each of the stats that were accounted for in predicting the 2022 champion. The top four features were Assist to Turnover Ratio (100), Defensive Rating (86.02), Offensive Rating (50.12), and Blocks (45.9). In the graph above, you can see the seasonal trends over the last few decades for these four features. If we look at the other dashboards in the story, we can see how the Grizzlies compare to other playoff teams in each of the four features.
+                    </li>
+                </ul>
 
 
 <!-- <script type="text/javascript"
