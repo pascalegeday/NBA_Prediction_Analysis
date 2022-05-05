@@ -23,12 +23,74 @@
                 <h3 class=" text-white" style="font-family: Aileron">Prediction</h3>
         </div>
                 <div class="container-fluid">
-                <p class="text-white"> 
-                insert visual here
-        
+                <p class="text-white">
+                        The goal of predicting an NBA champion can be formulated as a binary classification problem. Here the two classes are champion and non-champion. Using historical NBA data we know both classes exactly for all past seasons and thus using a supervised learning model is a fitting approach for our problem. Additionally, because it is a binary classification problem, we deemed logistic regression as the appropriate model for the job.
+
+                        We began by filtering out the non-playoff teams and selecting the range of seasons identified in previous sections as representative of the style of the modern game (2016 - 2021). After a few transformations, all three stats tables (traditional, advanced, and miscellaneous) were merged together into one table containing our complete set of stats ready for exploratory analysis.
+
+                        To begin exploring the data, we chose to investigate the relationships between the stats to see the degree of linear dependence in our dataset. The chart below shows a Pearson correlation coefficient heatmap for our dataset:
                 </p>
+                <div align="center">
+                        <img src="{{ url_for('static', filename='images/correlation_heatmap_all_stats.png') }}"
+                                alt="confusion matrix" />
+                </div>
+                <p class="text-white">
+                        The heat map reveals several variables that have strong dependence on one or more of the other variables. As an example, looking at the horizontal rows for effective field goal percentage (EFG%) and true shooting percentage (TS%), the correlation coefficient between them is high and thus their entire rows look very similar. It is important to exclude one of these stats as they carry the same information as indicated by their strong correlation.
+
+                        Below are two charts that take a closer look at maximum and 80th percentile values of correlation coefficient:
+                </p>
+                <div align="center">
+                        <img src="{{ url_for('static', filename='images/correlation_max.png') }}"
+                                alt="confusion matrix" />
+                </div>
+                <p class="text-white">
+                        These are the stats with maximum correlations under 0.8. This was used as a first attempt at identifying stat types that are more independent, carrying unique information. It is observed that there are only 16 out of 45 (35%) of stats that have maximum correlations under 0.8. A correlation of 0.8 is still strong and thus not ideal. It was important to explore this further to see if the entire row of correlations for a given stat were also high (we needed a sense of the distribution of correlations per stat). Thus we have the following chart:
+                </p>
+                <div align="center">
+                        <img src="{{ url_for('static', filename='images/correlation_80_percentile.png') }}"
+                                alt="confusion matrix" />
+                </div>
+                <p class="text-white">
+                        Here, we're looking at the 80th percentile correlation value for each stat that is filtered to leave only the stats where 80% of their correlations were below 0.35. This gives us a sense per stat of how independent it is from other stats on average. Starting with the important stats revealed by the previous sections, we can now add in stats that on average are independent and thus provide unique information to the model.
+
+                        The following chart shows the heatmap for the final selection of features based on an iterative process of running the machine learning model, viewing the feature importance, and deciding to add or subtract stats from the feature set:
+                </p>
+                <div align="center">
+                        <img src="{{ url_for('static', filename='images/correlation_heatmap_final_stats.png') }}"
+                                alt="confusion matrix" />
+                </div>
+                <p class="text-white">
+                        Principal Component Analysis was also completed using the full set of stats to investigate the amount of components needed to explain most of the variance in the data. This helped us in identifying the number of components to shoot for by the end of the feature engineering iterative process.
+                </p>
+                <div align="center">
+                        <img src="{{ url_for('static', filename='images/cumulative_explained_variance.png') }}"
+                                alt="confusion matrix" />
+                </div>
                 </div>
         </div>
+        <div class="container-fluid">
+                <h3 class=" text-white" style="font-family: Aileron">Results</h3>
+        </div>
+        <div class="container-fluid">
+                <p class="text-white">
+                        After running the model and predicting the test dataset, the following confusion matrix shows the performance of our model:
+                </p>
+                <div align="center">
+                        <img src="{{ url_for('static', filename='images/confusion_matrix_final.png') }}"
+                                alt="confusion matrix" />
+                </div>
+                <p class="text-white">
+                        We can see that we predicted champions correctly at a rate of 50%. This is less than ideal and may be due to a lack of data when limiting the input data to the year 2016, and only reaching a total 7 features used.
+
+                        Moving on to the goal of the project, our model predicted the Memphis Grizzlies as having the highest probability of winning the championship in 2022.
+
+                        See below the resulting probabilities for all playoff teams.                </p>
+                <div align="center">
+                        <img src="{{ url_for('static', filename='images/prediction_probabilities.png') }}"
+                                alt="confusion matrix" />
+                </div>
+        </div>
+
 
         <div class="container-fluid">
                 <h2 class="text-white" style="font-family: Aileron">Feature Importance</h2>
@@ -37,19 +99,30 @@
                 <h3 class=" text-white" style="font-family: Aileron">Stats</h3>
         </div>
                 <div class="container-fluid">
-                <p class=" text-white"> 
-                insert visual here
-        
+                <p class=" text-white">
+                        It was important in developing an iterative process to refine our model to have some sense of the most important features at the end of each run. Feature importance helped us achieve this. We used the coefficients from the logistic regression model as our measure and we created a relative scale based on the stat with the largest coefficient (the most important stat). Below is the visual showcasing the results for our final iteration using the final feature set:
+                </p>
+                <div align="center">
+                        <img src="{{ url_for('static', filename='images/relative_feature_importance_bar_chart.png') }}"
+                                alt="confusion matrix" />
+                </div>
+                <br>
+                <div align="center">
+                        <img src="{{ url_for('static', filename='images/relative_feature_importance.png') }}"
+                                alt="confusion matrix" />
+                </div>
+                <p class=" text-white">
+                        We can see here that assist to turnover ratio is the most important to predicting our champions. Other stats that proved to be strong indicators of champion likely teams were defensive and offensive rating as well as blocks and steals.
                 </p>
                 </div>
-        </div> 
-       
-        <tableau-viz id="tableauViz"       
-        src= "https://public.tableau.com/views/NBATeamStats_16516195895630/pOppPtsOffTO?:language=en-US&:display_count=n&:origin=viz_share_link"     
+        </div>
+
+        <tableau-viz id="tableauViz"
+        src= "https://public.tableau.com/views/NBATeamStats_16516195895630/pOppPtsOffTO?:language=en-US&:display_count=n&:origin=viz_share_link"
         device="desktop" toolbar="bottom" hide-tabs>
         </tableau-viz>
 
-               <div class="container px-4 py-5" id="featured-3"> 
+               <div class="container px-4 py-5" id="featured-3">
                   <h2 class="pb-2 border-bottom text-white" style="font-family: Aileron">Analysis</h2>
                   <p class="pb-2 text-white" style="font-family: Aileron">
                    </p>
