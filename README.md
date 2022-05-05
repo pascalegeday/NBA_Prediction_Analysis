@@ -14,6 +14,10 @@ We will use a supervised machine learning model, Logistic Regression, to predict
 ## Resources
 - Data Source: Official Team Stats for NBA: https://www.nba.com/stats/teams/traditional/?sort=W_PCT&dir=-1
 - Software & Tools: Python, Flask, SKlearn, Tableau Public, Javascript, HTML, Bootstrap, CSS
+## Tableau Visuals
+* https://public.tableau.com/app/profile/pascale.geday/viz/GAMEEVOLUTION/GAMEEVOLUTION
+* https://public.tableau.com/app/profile/pascale.geday/viz/PASTCHAMPIONSVS_CURRENTPLAYOFFTEAMS/PASTCHAMPIONSVS_CURRENTSEASON
+* 
 
 ## Schema
 ![Final_Project_Schema drawio (1)](https://user-images.githubusercontent.com/94571150/166839064-6888bba8-11c4-4334-9551-45733c7b216f.png)
