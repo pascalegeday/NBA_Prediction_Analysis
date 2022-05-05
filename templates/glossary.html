@@ -1,0 +1,92 @@
+{% extends 'navbar.html' %}
+
+<!--------------------------------- HEAD -------------------------------------->
+{% block head %}
+
+{% endblock %}
+
+
+<!--------------------------------- BODY -------------------------------------->
+{% block body %}
+{{ super() }}
+<div class="container-fluid">
+    <h3 class="text-center text-white" style="font-family: Aileron">GLOSSARY</h3>
+  </div>
+
+  <div class="container-fluid">
+    <ol class="text-white" style="font-family: Aileron" > PLAYOFFS_ADVANCED
+      <li>The Evolution of the NBA: How teams have evolved from playing a paint-dominant game to players now expected to stretch the floor. 
+        3-point data using attempted, made, and percentage of 3-points made</li>
+        <li>Offensive Stats:
+          EFG%,
+          Free Throws Percentage,
+          Points off turnovers,
+          Offensive Rebounds</li>
+        <li>Defensive Stats:
+          Blocks,
+          Steals,
+          Defensive Rebounds,
+          Defensive Rating</li>
+        <li>Comparing Past Champions to Current Season:
+          Offensive vs. Defensive Rating,
+          Assists vs Turnovers,
+          Effective vs True Shooting Percentages </li>
+        <li>Our Machine Learning Model 
+          Stats on Predicted Champion via Logistic Regression Model,
+          Feature Importance Visual and Analysis
+         </li>
+    </ol>
+  </div>
+														
+																
+OFFRTG	OFFENSIVE RATING	Measures a team's points scored per 100 possessions. On a player level this statistic is team points scored per 100 possessions while they are on court														
+DEFRTG	DEFENSIVE RATING	The number of points allowed per 100 possessions by a team. For a player, it is the number of points per 100 possessions that the team allows while that individual player is on the court														
+NETRTG	NET RATING	Measures a team's point differential per 100 possessions. On player level this statistic is the team's point differential per 100 possessions while they are on court.														
+AST%	ASSIST PERCENTAGE	The percentage of teammate field goals a player assisted on while they were on the floor														
+AST/TO	ASSIST TO TURNOVER RATIO	The number of assists for a player or team compared to the number of turnovers they have committed														
+AST RATIO	ASSIST RATIO	Assist Ratio is the number of assists a player averages per 100 possessions used														
+OREB%	OFFENSIVE REBOUND PERCENTAGE	The percentage of available offensive rebounds a player or team obtains while on the floor														
+DREB%	DEFENSIVE REBOUND PERCENTAGE 	The percentage of available defensive rebounds a player or team obtains while on the floor.														
+REB%	REBOUNDING PERCENTAGE 	The percentage of available rebounds a player or team grabbed while on the floor														
+TOV%	TURNOVER PERCENTAGE 	Percentage of plays that end in a player or team's turnover														
+EFG%	EFFECTIVE FIELD GOAL PERCENTAGE 															
+TS% 	TRUE SHOOTING PERCENTAGE 	A shooting percentage that factors in the value of three-point field goals and free throws in addition to conventional two-point field goals														
+PACE	PACE	The number of possessions per 48 minutes for a team or player.														
+PIE	PLAYER IMPACT ESTIMATE 	PIE measures a player's overall statistical contribution against the total statistics in games they play in. PIE yields results which are comparable to other advanced statistics (e.g. PER) using a simple formula.														
+POSS	POSSESSIONS 	The number of possessions played by a player or team. Please note: an Offensive Rebound does not create another possession, it simply makes the existing possession longer.														
+																
+PLAYOFFS_MISC																
+																
+PTS OFF TO	POINTS OFF TURNOVERS 	The number of points scored by a player or team following an opponent's turnover														
+2ND PTS	SECOND CHANCE POINTS 	The percentage of isolation plays where a player or team shoots free throws as the result of a shooting foul														
+FBPS	FAST BREAK POINTS	The number of points scored by a player or team while on a fast break														
+PITP	POINTS IN THE PAINT	The number of points scored by a player or team in the paint														
+OPP PTS OFF TO	OPPONENT POINTS OFF TURNOVERS	The number of points scored by an opposing player or team following a turnover														
+OPP 2ND PTS	OPPONENT SECOND CHANCE POINTS 	The number of points an opposing player or team scores on a possession when the opposing team rebounds the ball on offense														
+OPP FBPS	OPPONENT FAST BREAK POINTS 	The number of points scored by an opposing player or team while on a fast break														
+OPP PITP	OPPONENTS POINTS IN THE PAINT	The number of points scored by an opposing player or team in the paint														
+																
+PLAYOFFS_TRADITIONAL																
+																
+FGM	FIELD GOALS MADE 	The number of field goals that a player or team has made. This includes both 2 pointers and 3 pointers														
+FGA	FIELD GOALS ATTEMPTED 	The number of field goals that a player or team has attempted. This includes both 2 pointers and 3 pointers														
+FG%	FIELD GOAL PERCENTAGE	The percentage of field goal attempts that a player makes														
+3 POINTS MADE	3 POINT FIELD GOALS MADE	The number of 3 point field goals that a player or team has made														
+3PA	3 POINT FIELD GOALS ATTEMPTED 	The number of 3 point field goals that a player or team has attempted														
+3P %	3 POINT FIELD GOAL PERCENTAGE 	The percentage of 3 point field goal attempts that a player makes														
+FTM 	FREE THROWS MADE 	The number of free throws that a player or team has made														
+FTA 	FREE THROWS ATTEMPTED 	The number of free throws that a player or team has attempted														
+FT%	FREE THROW PERCENTAGE 	The percentage of free throw attempts that a player or team has made														
+OREB	OFFENSIVE REBOUND	The number of rebounds a player or team has collected while they were on offense														
+DREB	DEFENSIVE REBOUND	The number of rebounds a player or team has collected while they were on defense														
+REB 	REBOUNDS	A rebound occurs when a player recovers the ball after a missed shot. This statistic is the number of total rebounds a player or team has collected on either offense or defense														
+AST	ASSISTS	The number of assists -- passes that lead directly to a made basket -- by a player														
+TOV	TURNOVERS	A turnover occurs when the player or team on offense loses the ball to the defense														
+STL	STEALS	Number of times a defensive player or team takes the ball from a player on offense, causing a turnover														
+BLK	BLOCKS  	A block occurs when an offensive player attempts a shot, and the defense player tips the ball, blocking their chance to score														
+BLKA	BLOCKS AGAINST 	The number of shots attempted by a player or team that are blocked by a defender														
+PF 	PERSONAL FOULS	The number of personal fouls a player or team committed														
+PFD	PERSONAL FOULS DRAWN	The number of personal fouls that are drawn by a player or team														
+PLUS / MINUS	PLUS-MINUS	The point differential when a player or team is on the floor														
+
+{% endblock %}
