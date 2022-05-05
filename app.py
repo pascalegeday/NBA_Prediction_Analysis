@@ -29,7 +29,6 @@ def index():
 
     return render_template("index.html")
 
-
 @app.route("/game_evolution")
 def game_evolution():
     table_html = tables["traditional"].to_html(
