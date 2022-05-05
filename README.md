@@ -122,47 +122,51 @@ From the offensive and defensive ratings, we can calculate the net rating, which
 ## Machine Learning Model
 ### Logistic Regression
 #### Prediction
-![Screen Shot 2022-05-04 at 8 13 58 PM](https://user-images.githubusercontent.com/94571150/166858694-fa353ddc-4f69-48f1-a3e4-3aee96475774.png)
-<br>
 The goal of predicting an NBA champion can be formulated as a binary classification problem. Here the two classes are champion and non-champion. Using historical NBA data we know both classes exactly for all past seasons and thus using a supervised learning model is a fitting approach for our problem. Additionally, because it is a binary classification problem, we deemed logistic regression as the appropriate model for the job. We began by filtering out the non-playoff teams and selecting the range of seasons identified in previous sections as representative of the style of the modern game (2016 - 2021). After a few transformations, all three stats tables (traditional, advanced, and miscellaneous) were merged together into one table containing our complete set of stats ready for exploratory analysis. To begin exploring the data, we chose to investigate the relationships between the stats to see the degree of linear dependence in our dataset. The chart below shows a Pearson correlation coefficient heatmap for our dataset. <br>
 
-![Screen Shot 2022-05-04 at 8 14 37 PM](https://user-images.githubusercontent.com/94571150/166858775-9d886bb5-7f05-4b61-bb05-bc06d5665fcb.png)
+![Screen Shot 2022-05-04 at 8 13 58 PM](https://user-images.githubusercontent.com/94571150/166858694-fa353ddc-4f69-48f1-a3e4-3aee96475774.png)
 <br>
 The heat map reveals several variables that have strong dependence on one or more of the other variables. As an example, looking at the horizontal rows for effective field goal percentage (EFG%) and true shooting percentage (TS%), the correlation coefficient between them is high and thus their entire rows look very similar. It is important to exclude one of these stats as they carry the same information as indicated by their strong correlation. Below are two charts that take a closer look at maximum and 80th percentile values of correlation coefficient. <br>
 
-![Screen Shot 2022-05-04 at 8 15 30 PM](https://user-images.githubusercontent.com/94571150/166858835-b825c09f-b4f3-43f7-a21a-f491960ccb5f.png)
+![Screen Shot 2022-05-04 at 8 14 37 PM](https://user-images.githubusercontent.com/94571150/166858775-9d886bb5-7f05-4b61-bb05-bc06d5665fcb.png)
 <br>
 These are the stats with maximum correlations under 0.8. This was used as a first attempt at identifying stat types that are more independent, carrying unique information. It is observed that there are only 16 out of 45 (35%) of stats that have maximum correlations under 0.8. A correlation of 0.8 is still strong and thus not ideal. It was important to explore this further to see if the entire row of correlations for a given stat were also high (we needed a sense of the distribution of correlations per stat). Thus we have the following chart. <br>
 
-![Screen Shot 2022-05-04 at 8 16 20 PM](https://user-images.githubusercontent.com/94571150/166858899-ec8aaf7f-827a-4c7a-93f8-394801ad577c.png)
+![Screen Shot 2022-05-04 at 8 15 30 PM](https://user-images.githubusercontent.com/94571150/166858835-b825c09f-b4f3-43f7-a21a-f491960ccb5f.png)
 <br>
 Here, we're looking at the 80th percentile correlation value for each stat that is filtered to leave only the stats where 80% of their correlations were below 0.35. This gives us a sense per stat of how independent it is from other stats on average. Starting with the important stats revealed by the previous sections, we can now add in stats that on average are independent and thus provide unique information to the model. The following chart shows the heatmap for the final selection of features based on an iterative process of running the machine learning model, viewing the feature importance, and deciding to add or subtract stats from the feature set.
 
+![Screen Shot 2022-05-04 at 8 16 20 PM](https://user-images.githubusercontent.com/94571150/166858899-ec8aaf7f-827a-4c7a-93f8-394801ad577c.png)
+<br>
+
+Principal Component Analysis was also completed using the full set of stats to investigate the amount of components needed to explain most of the variance in the data. This helped us in identifying the number of components to shoot for by the end of the feature engineering iterative process.
+
 ![Screen Shot 2022-05-04 at 8 17 13 PM](https://user-images.githubusercontent.com/94571150/166858951-9f80c31f-9859-42c1-b9d3-bb622e56e7eb.png)
 <br>
-Principal Component Analysis was also completed using the full set of stats to investigate the amount of components needed to explain most of the variance in the data. This helped us in identifying the number of components to shoot for by the end of the feature engineering iterative process.
+
 
 
 ## Results
+After running the model and predicting the test dataset, the following confusion matrix shows the performance of our model. <br>
 
 ![Screen Shot 2022-05-04 at 8 18 22 PM](https://user-images.githubusercontent.com/94571150/166859036-25abf10f-31c7-47ab-85bf-7aed8f702cac.png)
 <br>
-After running the model and predicting the test dataset, the following confusion matrix shows the performance of our model. <br>
+
+We can see that we predicted champions correctly at a rate of 50%. This is less than ideal and may be due to a lack of data when limiting the input data to the year 2016, and only reaching a total 7 features used. Moving on to the goal of the project, our model predicted the Memphis Grizzlies as having the highest probability of winning the championship in 2022. See below the resulting probabilities for all playoff teams.
 
 ![Screen Shot 2022-05-04 at 8 19 12 PM](https://user-images.githubusercontent.com/94571150/166859102-32fe30a2-5900-4208-b277-6ee17d317978.png)
 <br>
-We can see that we predicted champions correctly at a rate of 50%. This is less than ideal and may be due to a lack of data when limiting the input data to the year 2016, and only reaching a total 7 features used. Moving on to the goal of the project, our model predicted the Memphis Grizzlies as having the highest probability of winning the championship in 2022. See below the resulting probabilities for all playoff teams.
 
 ## Feature Importance
 ### Stats
-
+It was important in developing an iterative process to refine our model to have some sense of the most important features at the end of each run. Feature importance helped us achieve this. We used the coefficients from the logistic regression model as our measure and we created a relative scale based on the stat with the largest coefficient (the most important stat). Below is the visual showcasing the results for our final iteration using the final feature set.
 
 ![Screen Shot 2022-05-04 at 8 20 35 PM](https://user-images.githubusercontent.com/94571150/166859198-19bb98d9-c624-44a3-b14c-c6ed98ff18ae.png) <br>
+
 ![Screen Shot 2022-05-04 at 8 21 02 PM](https://user-images.githubusercontent.com/94571150/166859242-fa4ef948-1e93-46bf-8d92-3d737976dd11.png)
 <br> 
-It was important in developing an iterative process to refine our model to have some sense of the most important features at the end of each run. Feature importance helped us achieve this. We used the coefficients from the logistic regression model as our measure and we created a relative scale based on the stat with the largest coefficient (the most important stat). Below is the visual showcasing the results for our final iteration using the final feature set.
-We can see here that assist to turnover ratio is the most important to predicting our champions. Other stats that proved to be strong indicators of champion likely teams were defensive and offensive rating as well as blocks and steals.
 
+We can see here that assist to turnover ratio is the most important to predicting our champions. Other stats that proved to be strong indicators of champion likely teams were defensive and offensive rating as well as blocks and steals.
 
 ## Final Predictions
 ![Screen Shot 2022-05-04 at 5 46 14 PM](https://user-images.githubusercontent.com/94571150/166849061-984b78f0-e618-48b6-b5e5-437d4798cc0d.png)
