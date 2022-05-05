@@ -3,7 +3,7 @@
 
 ## Overview
 "The National Basketball Association (NBA) is a professional basketball league in North America. The league is composed of 30 teams (29 in the United States and 1 in Canada) and is one of the major professional sports leagues in the United States and Canada. It is the premier men's professional basketball league in the world.” <br> <br>
-Aware of the huge impact this sport has worldwide and the data available to us, our final project will focus on learning how historical team statistics/data can help us predict the 2022 NBA champion using machine learning models. Additionally, we will analyze important team statistics to help us come to a consensus about why our machine learning predicted certain teams as being the most probable choice for NBA Champion.
+Aware of the huge impact this sport has worldwide and the data available to us, our final project will focus on learning how historical team statistics/data can help us predict the 2022 NBA champion using machine learning models. Additionally, we will analyze important team statistics to help us come to a consensus about why our machine learning model predicted certain teams as being the most probable choice for NBA Champion.
 We will use a supervised machine learning model, Logistic Regression, to predict the 2022 NBA Champion. Using our NBA Stats Database that we have created via Web Scraping and ETL preprocessing we will analyze the machine learning model's feature importance as well as create Tableau visualizations to further understand the overall outcome of our predictions. Finally, we'll create a Flask app to deploy these visualizations and analysis. 
 
 ## Overarching Analysis Questions
