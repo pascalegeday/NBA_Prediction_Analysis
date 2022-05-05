@@ -118,5 +118,5 @@ From the offensive and defensive ratings, we can calculate the net rating, which
 ## Final Predictions
 ![Screen Shot 2022-05-04 at 5 46 14 PM](https://user-images.githubusercontent.com/94571150/166849061-984b78f0-e618-48b6-b5e5-437d4798cc0d.png)
 
-Memphis Grizzlies
+### Memphis Grizzlies
 Our machine learning model predicted that the Memphis Grizzlies will be the 2022 NBA Finals Champions. After we ran our machine learning model, we wanted to see the highest weighted relative importance of each of the stats that were accounted for in predicting the 2022 champion. The top four features were Assist to Turnover Ratio (100), Defensive Rating (86.02), Offensive Rating (50.12), and Blocks (45.9). In the graph above, you can see the seasonal trends over the last few decades for these four features. If we look at the other dashboards in the story, we can see how the Grizzlies compare to other playoff teams in each of the four features.
